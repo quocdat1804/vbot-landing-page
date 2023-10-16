@@ -60,7 +60,7 @@ export default function Download() {
                   alt={"Qr donload"}
                   fit={"scale-down"}
                   align={"start"}
-                  src={"/qr.png"}
+                  src={`${config.basePath}/qr.png`}
                   display={{ base: "inline-flex", md: "none" }}
                 />
                 <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4}>
@@ -81,7 +81,7 @@ export default function Download() {
               alt={"Qr donload"}
               fit={"scale-down"}
               align={"start"}
-              src={"/qr.png"}
+              src={`${config.basePath}/qr.png`}
               display={{ base: "none", md: "inline-flex" }}
             />
           </Stack>
