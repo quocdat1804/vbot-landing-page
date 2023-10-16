@@ -26,6 +26,7 @@ import {
 } from "@chakra-ui/react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import config from '../next.config';
 
 export default function Features() {
     const ref = useRef<HTMLDivElement>(null);
@@ -184,37 +185,37 @@ const FEATURE_ITEMS: Array<TabItems> = [
                 name: "Lịch sử cuộc gọi",
                 content:
                     "Theo dõi và quản lý thông tin cuộc gọi của tất cả thành viên trong nhóm tổng đài.",
-                image: "/f00.png",
+                image: `${config.basePath}/f00.png`,
             },
             {
                 name: "Giám sát",
                 content:
                     "Giám sát thời gian thực cuộc gọi của thành viên: Nghe lén, Giành cuộc gọi, Ngắt cuộc gọi.",
-                image: "/f01.png",
+                image: `${config.basePath}/f01.png`,
             },
             {
                 name: "Quản lý hotline",
                 content:
                     "Quản lý tất cả các hotline có trong nhóm, tạo các alias hotline tự động chuyển theo mạng.",
-                image: "/f02.png",
+                image: `${config.basePath}/f02.png`,
             },
             {
                 name: "Cài đặt tương tác trả lời tự động",
                 content:
                     "Cài đặt lời chào tổng đài, điều hướng khách hàng đến đúng bộ phận hỗ trợ chăm sóc.",
-                image: "/f03.png",
+                image: `${config.basePath}/f03.png`,
             },
             {
                 name: "Note, tagging",
                 content:
                     "Tạo tag đánh dấu, phân loại cho từng cuộc gọi, giúp thống kê phân tích nhu cầu và loại khách hàng theo thông tin tag đã tạo.",
-                image: "/f04.png",
+                image: `${config.basePath}/f04.png`,
             },
             {
                 name: "Khảo sát đánh giá",
                 content:
                     "Tạo tag đánh dấu, phân loại cho từng cuộc gọi, giúp thống kê phân tích nhu cầu và loại khách hàng theo thông tin tag đã tạo.",
-                image: "/f05.png",
+                image: `${config.basePath}/f05.png`,
             },
         ],
     },
@@ -225,13 +226,13 @@ const FEATURE_ITEMS: Array<TabItems> = [
                 name: "Gọi tự động",
                 content:
                     "Tạo và thực hiện các cuộc gọi tự động đến danh sách thuê bao khách hàng được nhập vào.",
-                image: "/f10.png",
+                image: `${config.basePath}/f10.png`,
             },
             {
                 name: "Tin nhắn tự động",
                 content:
                     "Tạo và thực hiện các cuộc gọi tự động đến danh sách thuê bao khách hàng được nhập vào.",
-                image: "/f11.png",
+                image: `${config.basePath}/f11.png`,
             },
         ],
     },
@@ -242,29 +243,29 @@ const FEATURE_ITEMS: Array<TabItems> = [
                 name: "Khách hàng",
                 content:
                     "Tạo và thực hiện các cuộc gọi tự động đến danh sách thuê bao khách hàng được nhập vào.",
-                image: "/f20.png",
+                image: `${config.basePath}/f20.png`,
             },
             {
                 name: "Nhóm khách hàng",
                 content:
                     "Nhóm khách hàng có các đặc điểm, tiêu chí giống nhau để quản lý dễ dàng hơn.",
-                image: "/f21.png",
+                image: `${config.basePath}/f21.png`,
             },
             {
                 name: "Kiểu khách hàng",
                 content: "Kiểu khách hàng sử dụng sản phẩm dịch vụ của doanh nghiệp.",
-                image: "/f22.png",
+                image: `${config.basePath}/f22.png`,
             },
             {
                 name: "Trạng thái khách hàng",
                 content: "Trạng thái khách hàng sử dụng dịch vụ của doanh nghiệp.",
-                image: "/f23.png",
+                image: `${config.basePath}/f23.png`,
             },
             {
                 name: "Tuỳ chỉnh thông tin",
                 content:
                     "Tuỳ chỉnh thông tin khách hàng phù hợp với thông tin doanh nghiệp cần lưu trữ khách hàng.",
-                image: "/f24.png",
+                image: `${config.basePath}/f24.png`,
             },
         ],
     },
@@ -275,7 +276,7 @@ const FEATURE_ITEMS: Array<TabItems> = [
                 name: "Công việc",
                 content:
                     "Tạo công việc trong nhóm, phân chia cho các thành viên trong nhóm xử lý công việc. Công việc cá nhân của bạn ở trong nhóm, các thành viên khác sẽ không thể xem công việc cá nhân của bạn.",
-                image: "/f30.png",
+                image: `${config.basePath}/f30.png`,
             },
         ],
     },
@@ -286,25 +287,25 @@ const FEATURE_ITEMS: Array<TabItems> = [
                 name: "Báo cáo theo ngày",
                 content:
                     "Thống kê báo cáo theo ngày, có thể tuỳ chỉnh khoảng thời gian xem báo cáo.",
-                image: "/f40.png",
+                image: `${config.basePath}/f40.png`,
             },
             {
                 name: "Báo cáo theo tháng",
                 content:
                     "Thống kê báo cáo theo tháng, có thể tuỳ chỉnh khoảng thời gian xem báo cáo.",
-                image: "/f41.png",
+                image: `${config.basePath}/f41.png`,
             },
             {
                 name: "Báo cáo theo thành viên",
                 content:
                     "Thống kê báo cáo cuộc gọi chi tiết các thành viên trong nhóm theo khoảng thời gian tuỳ chỉnh",
-                image: "/f42.png",
+                image: `${config.basePath}/f42.png`,
             },
             {
                 name: "Báo cáo số lượng tagging",
                 content:
                     "Thống kê báo cáo cuộc gọi chi tiết các thành viên trong nhóm theo khoảng thời gian tuỳ chỉnh",
-                image: "/f43.png",
+                image: `${config.basePath}/f43.png`,
             },
         ],
     },
@@ -314,12 +315,12 @@ const FEATURE_ITEMS: Array<TabItems> = [
             {
                 name: "Quản lý thành viên",
                 content: "Theo dõi, quản lý các thành viên trong nhóm tổng đài",
-                image: "/f50.png",
+                image: `${config.basePath}/f50.png`,
             },
             {
                 name: "Theo dõi, quản lý các thành viên trong nhóm tổng đài",
                 content: "Tạo nhóm thành viên, chia thành viên ra theo các phòng ban.",
-                image: "/f51.png",
+                image: `${config.basePath}/f51.png`,
             },
         ],
     },

@@ -17,6 +17,7 @@ import {
 } from "@chakra-ui/react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import config from '../next.config';
 
 export default function Download() {
   const ref = useRef<HTMLDivElement>(null);
@@ -99,14 +100,14 @@ interface DownloadItem {
 const DOWNLOAD_ITEMS: Array<DownloadItem> = [
   {
     label: "AppStore",
-    image: "/appstore.png",
+    image: `${config.basePath}/appstore.png`,
   },
   {
     label: "CHPlay",
-    image: "/google.png",
+    image: `${config.basePath}/google.png`,
   },
   {
     label: "Windows",
-    image: "/windows.png",
+    image: `${config.basePath}/windows.png`,
   },
 ];

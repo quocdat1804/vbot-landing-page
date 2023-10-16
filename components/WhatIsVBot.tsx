@@ -14,6 +14,7 @@ import {
 import { InfoIcon } from "@chakra-ui/icons";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react"
+import config from '../next.config';
 
 export default function WhatIsVBot() {
     const ref = useRef<HTMLDivElement>(null);
@@ -47,7 +48,7 @@ export default function WhatIsVBot() {
                             align={"center"}
                             w={"100%"}
                             h={"100%"}
-                            src="/what-vbot.png"
+                            src={`${config.basePath}/what-vbot.png`}
                         />
                     </Flex>
                     <Stack flex={1} spacing={{ base: 2, md: 4 }}>

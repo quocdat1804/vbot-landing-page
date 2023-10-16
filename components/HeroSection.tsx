@@ -14,6 +14,7 @@ import {
   IconProps,
 } from "@chakra-ui/react";
 import { EmailIcon } from "@chakra-ui/icons";
+import config from '../next.config';
 
 export default function HeroSection() {
   return (
@@ -91,7 +92,7 @@ export default function HeroSection() {
             align={"center"}
             w={"100%"}
             h={"100%"}
-            src="/hero-section.png"
+            src={`${config.basePath}/hero-section.png`}
           />
         </Flex>
       </Stack>

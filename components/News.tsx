@@ -15,6 +15,7 @@ import "slick-carousel/slick/slick-theme.css";
 import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import config from '../next.config';
 
 const Slider2 = dynamic(() => import("react-slick").then((m) => m.default), {
     ssr: false,
@@ -47,7 +48,7 @@ const NewsCard = ({ label, content }: NewsItem) => {
                     <Image
                         boxSize="36px"
                         objectFit="cover"
-                        src="/app-logo.png"
+                        src={`${config.basePath}/app-logo.png`}
                         alt="VBot logo"
                     />
                     <Heading size="sm">Nhóm hỗ trợ VBot</Heading>

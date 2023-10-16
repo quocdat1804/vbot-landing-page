@@ -7,7 +7,7 @@ import {
   SimpleGrid,
   Center,
 } from "@chakra-ui/react";
-import { ReactNode } from "react";
+import config from '../next.config';
 
 export default function Agency() {
   return (
@@ -71,18 +71,19 @@ interface AgencyItem {
   image: string;
 }
 
+
 const CUSTOMER_ITEMS: Array<AgencyItem> = [
   {
     label: "vinaphone",
-    image: "/argency-vinaphone.png",
+    image: `${config.basePath}/argency-vinaphone.png`,
   },
   {
     label: "viettel",
-    image: "/argency-viettel.png",
+    image: `${config.basePath}/argency-viettel.png`,
   },
   {
     label: "mobiphone",
-    image: "/argency-mobifone.png",
+    image: `${config.basePath}/argency-mobifone.png`,
   },
 
 ];
