@@ -24,6 +24,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+import config from '../next.config';
 
 import { Link, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
 
@@ -72,7 +73,7 @@ export default function Navbar() {
               <Image
                 boxSize="36px"
                 objectFit="cover"
-                src="/app-logo.png"
+                src={`${config.basePath}/app-logo.png`}
                 alt="VBot logo"
               />
               <Text
