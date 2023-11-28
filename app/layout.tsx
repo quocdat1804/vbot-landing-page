@@ -1,10 +1,7 @@
 "use client";
 import { ChakraProvider, extendTheme, Box } from "@chakra-ui/react";
 import { theme } from "../chakra/theme";
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import Agency from "@/components/Agency";
-import Footer from "@/components/Footer";
+import ScrollToTopButton from "@/components/ScrollToTopButton"
 
 export default function RootLayout({
   children,
@@ -17,6 +14,7 @@ export default function RootLayout({
       <body>
         <ChakraProvider theme={theme}>
           {children}
+          <ScrollToTopButton />
         </ChakraProvider>
       </body>
     </html>
