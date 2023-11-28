@@ -4,7 +4,6 @@ import {
     Container,
     Stack,
     Flex,
-    Box,
     Heading,
     Text,
     Button,
@@ -65,7 +64,7 @@ export default function WhatIsVBot() {
                             người dùng dễ dàng sử dụng thông qua các thiết bị smartphone hoặc
                             laptop kết nối internet.
                         </Text>
-                        <Flex>
+                        {/* <Flex>
                             <Button
                                 as={"a"}
                                 fontSize={"md"}
@@ -82,7 +81,7 @@ export default function WhatIsVBot() {
                                 Tìm hiểu thêm
                             </Button>
                             <Spacer />
-                        </Flex>
+                        </Flex> */}
                     </Stack>
                 </Stack>
             </Container>

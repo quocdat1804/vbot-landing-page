@@ -1,0 +1,7 @@
+{
+  "/page": "app/page.js",
+  "/(policy)/contact-sales/page": "app/(policy)/contact-sales/page.js",
+  "/(policy)/privacy/paymentpolicy/page": "app/(policy)/privacy/paymentpolicy/page.js",
+  "/(policy)/privacy/overview/page": "app/(policy)/privacy/overview/page.js",
+  "/(policy)/privacy/transportpolicy/page": "app/(policy)/privacy/transportpolicy/page.js"
+}

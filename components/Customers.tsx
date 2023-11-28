@@ -3,15 +3,12 @@
 import {
   Container,
   Stack,
-  Flex,
   Box,
   Heading,
-  Text,
   Image,
   SimpleGrid,
   Center,
-  useColorModeValue,
-  Link
+  useColorModeValue
 } from "@chakra-ui/react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react"

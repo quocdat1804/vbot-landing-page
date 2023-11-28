@@ -4,18 +4,15 @@ import {
   Box,
   chakra,
   Container,
-  Image,
   SimpleGrid,
   Stack,
   Text,
   VisuallyHidden,
-  Input,
-  IconButton,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { FaFacebook, FaFacebookMessenger, FaSkype } from "react-icons/fa";
-import { BiMailSend } from "react-icons/bi";
+import config from '../next.config';
 
 const SocialButton = ({
   children,
@@ -72,29 +69,29 @@ export default function Footer() {
             <ListHeader>Công ty CP Công nghệ Truyền thông Việt Phát</ListHeader>
             <Stack direction={"row"}>
               <Text fontWeight={"semibold"}>Địa chỉ:</Text>
-              <Text fontWeight={"light"}>
+              <Text >
                 3/4, 163 Nguyễn Khang, Yên Hoà, Cầu Giấy, Hà Nội
               </Text>
             </Stack>
 
             <Stack direction={"row"}>
               <Text fontWeight={"semibold"}>Điện thoại:</Text>
-              <Text fontWeight={"light"}>0857 066 866</Text>
+              <Text >0857 066 866</Text>
             </Stack>
 
             <Stack direction={"row"}>
               <Text fontWeight={"semibold"}>Email:</Text>
-              <Text fontWeight={"light"}>sale@vpmedia.vn</Text>
+              <Text >sale@vpmedia.vn</Text>
             </Stack>
 
             <Stack direction={"row"}>
               <Text fontWeight={"semibold"}>Số ĐKKD:</Text>
-              <Text fontWeight={"light"}>0106342003</Text>
+              <Text >0106342003</Text>
             </Stack>
 
             <Stack direction={"row"}>
               <Text fontWeight={"semibold"}>Nơi cấp:</Text>
-              <Text fontWeight={"light"}>
+              <Text >
                 Sở kế hoạch và đầu tư Thành phố Hà Nội
               </Text>
             </Stack>
@@ -104,7 +101,7 @@ export default function Footer() {
             <ListHeader>Chính sách</ListHeader>
             <Box
               as="a"
-              href={"#"}
+              href={`${config.basePath}/privacy/overview`}
               _hover={{
                 color: "#168F41",
               }}
@@ -113,7 +110,7 @@ export default function Footer() {
             </Box>
             <Box
               as="a"
-              href={"#"}
+              href={`${config.basePath}/privacy/privacypolicy`}
               _hover={{
                 color: "#168F41",
               }}
@@ -122,7 +119,16 @@ export default function Footer() {
             </Box>
             <Box
               as="a"
-              href={"#"}
+              href={`${config.basePath}/privacy/paymentpolicy`}
+              _hover={{
+                color: "#168F41",
+              }}
+            >
+              Chính sách thanh toán
+            </Box>
+            <Box
+              as="a"
+              href={`${config.basePath}/privacy/warrantypolicy`}
               _hover={{
                 color: "#168F41",
               }}
@@ -131,7 +137,7 @@ export default function Footer() {
             </Box>
             <Box
               as="a"
-              href={"#"}
+              href={`${config.basePath}/privacy/exchangepolicy`}
               _hover={{
                 color: "#168F41",
               }}
@@ -140,7 +146,7 @@ export default function Footer() {
             </Box>
             <Box
               as="a"
-              href={"#"}
+              href={`${config.basePath}/privacy/transportpolicy`}
               _hover={{
                 color: "#168F41",
               }}
@@ -152,10 +158,10 @@ export default function Footer() {
           <Stack align={"flex-start"}>
             <ListHeader>Liên kết</ListHeader>
             <Stack direction={"row"} spacing={6}>
-              <SocialButton label={"Facebook"} href={"#"}>
+              <SocialButton label={"Facebook"} href={"https://www.facebook.com/vbotapp"}>
                 <FaFacebook />
               </SocialButton>
-              <SocialButton label={"Messenger"} href={"#"}>
+              <SocialButton label={"Messenger"} href={"https://www.facebook.com/messages/t/100252124922062"}>
                 <FaFacebookMessenger />
               </SocialButton>
               <SocialButton label={"Skype"} href={"#"}>

@@ -3,15 +3,9 @@
 import {
     Container,
     Stack,
-    Flex,
     Box,
     Heading,
     Text,
-    Image,
-    SimpleGrid,
-    Center,
-    useColorModeValue,
-    Link,
     ListItem,
     UnorderedList,
     VStack,
@@ -21,8 +15,6 @@ import {
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import dynamic from "next/dynamic";
-import { ReactElement } from "react";
-import { useMediaQuery } from "@chakra-ui/react";
 
 const Slider = dynamic(() => import("react-slick").then((m) => m.default), {
     ssr: false,

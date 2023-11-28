@@ -4,7 +4,6 @@ import {
   Container,
   Stack,
   Flex,
-  Box,
   Heading,
   Text,
   Button,
@@ -53,7 +52,7 @@ export default function HeroSection() {
               fontWeight={600}
               color={"black"}
               bg="white"
-              href={"#"}
+              href={"https://vbot.vn/user/Account/Register"}
               _hover={{
                 bg: "brand.500",
                 color: "white"
@@ -65,7 +64,7 @@ export default function HeroSection() {
               as={"a"}
               fontSize={"md"}
               fontWeight={600}
-              href={"#"}
+              href={`${config.basePath}/contact-sales`}
               bg={"brand.500"}
               color={"white"}
               leftIcon={<EmailIcon />}
