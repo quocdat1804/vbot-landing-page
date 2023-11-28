@@ -11,8 +11,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
-import { FaFacebook, FaFacebookMessenger, FaSkype } from "react-icons/fa";
-import config from '../next.config';
+import { FaFacebook, FaFacebookMessenger } from "react-icons/fa";
+import config from "../next.config";
 
 const SocialButton = ({
   children,
@@ -56,10 +56,7 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 
 export default function Footer() {
   return (
-    <Box
-      bg={"#0A2C37"}
-      color={"white"}
-    >
+    <Box bg={"#0A2C37"} color={"white"}>
       <Container as={Stack} maxW={"6xl"} py={12}>
         <SimpleGrid
           templateColumns={{ sm: "1fr 1fr", md: "2fr 1fr 1fr" }}
@@ -69,31 +66,27 @@ export default function Footer() {
             <ListHeader>Công ty CP Công nghệ Truyền thông Việt Phát</ListHeader>
             <Stack direction={"row"}>
               <Text fontWeight={"semibold"}>Địa chỉ:</Text>
-              <Text >
-                3/4, 163 Nguyễn Khang, Yên Hoà, Cầu Giấy, Hà Nội
-              </Text>
+              <Text>3/4, 163 Nguyễn Khang, Yên Hoà, Cầu Giấy, Hà Nội</Text>
             </Stack>
 
             <Stack direction={"row"}>
               <Text fontWeight={"semibold"}>Điện thoại:</Text>
-              <Text >0857 066 866</Text>
+              <Text>0857 066 866</Text>
             </Stack>
 
             <Stack direction={"row"}>
               <Text fontWeight={"semibold"}>Email:</Text>
-              <Text >sale@vpmedia.vn</Text>
+              <Text>sale@vpmedia.vn</Text>
             </Stack>
 
             <Stack direction={"row"}>
               <Text fontWeight={"semibold"}>Số ĐKKD:</Text>
-              <Text >0106342003</Text>
+              <Text>0106342003</Text>
             </Stack>
 
             <Stack direction={"row"}>
               <Text fontWeight={"semibold"}>Nơi cấp:</Text>
-              <Text >
-                Sở kế hoạch và đầu tư Thành phố Hà Nội
-              </Text>
+              <Text>Sở kế hoạch và đầu tư Thành phố Hà Nội</Text>
             </Stack>
           </Stack>
 
@@ -158,19 +151,22 @@ export default function Footer() {
           <Stack align={"flex-start"}>
             <ListHeader>Liên kết</ListHeader>
             <Stack direction={"row"} spacing={6}>
-              <SocialButton label={"Facebook"} href={"https://www.facebook.com/vbotapp"}>
+              <SocialButton
+                label={"Facebook"}
+                href={"https://www.facebook.com/vbotapp"}
+              >
                 <FaFacebook />
               </SocialButton>
-              <SocialButton label={"Messenger"} href={"https://www.facebook.com/messages/t/100252124922062"}>
+              <SocialButton
+                label={"Messenger"}
+                href={"https://www.facebook.com/messages/t/100252124922062"}
+              >
                 <FaFacebookMessenger />
-              </SocialButton>
-              <SocialButton label={"Skype"} href={"#"}>
-                <FaSkype />
               </SocialButton>
             </Stack>
           </Stack>
         </SimpleGrid>
       </Container>
-    </ Box>
+    </Box>
   );
 }

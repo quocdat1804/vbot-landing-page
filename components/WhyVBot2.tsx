@@ -10,7 +10,7 @@ import {
     UnorderedList,
     VStack,
     Icon,
-    IconProps
+    IconProps,
 } from "@chakra-ui/react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -20,24 +20,18 @@ const Slider = dynamic(() => import("react-slick").then((m) => m.default), {
     ssr: false,
 });
 
-
-
-const Card2 = ({ label,
-    image,
-    content,
-    subContent, }: FeatureItem) => {
-
+const Card2 = ({ label, image, content, subContent }: FeatureItem) => {
     return (
         <Box
-            maxW={{ base: 'full', md: '400px' }}
+            maxW={{ base: "full", md: "400px" }}
             bg={"white"}
             overflow="hidden"
-            borderRadius='lg'
+            borderRadius="lg"
             p={5}
             transition={"all 0.5s"}
             textAlign={"start"}
         >
-            <Stack align={'start'} spacing={2}>
+            <Stack align={"start"} spacing={2}>
                 <Stack direction={"row"} alignItems={"center"} spacing={4}>
                     {image}
                     <Heading size="sm">{label}</Heading>
@@ -58,26 +52,20 @@ const Card2 = ({ label,
                         </UnorderedList>
                     )}
                 </Box>
-
             </Stack>
         </Box>
-    )
-}
+    );
+};
 
-const Slide = ({ label,
-    image,
-    content,
-    subContent, }: FeatureItem) => {
+const Slide = ({ label, image, content, subContent }: FeatureItem) => {
     return (
-        <VStack
-            w="１００％"
-            h="１００％"
-            mx="4"
-            borderRadius={"md"}
-            px={4}
-            py={4}
-        >
-            <Card2 label={label} image={image} content={content} subContent={subContent} />
+        <VStack w="１００％" h="１００％" mx="4" borderRadius={"md"} px={4} py={4}>
+            <Card2
+                label={label}
+                image={image}
+                content={content}
+                subContent={subContent}
+            />
         </VStack>
     );
 };
@@ -97,34 +85,31 @@ export default function News() {
                     slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: true,
-                    dots: true
-                }
+                    dots: true,
+                },
             },
             {
                 breakpoint: 1080,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 2
-                }
+                    slidesToScroll: 2,
+                },
             },
             {
                 breakpoint: 720,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
+                    slidesToScroll: 1,
+                },
+            },
             // You can unslick at a given breakpoint now by adding:
             // settings: "unslick"
             // instead of a settings object
-        ]
+        ],
     };
     return (
         <Box bgGradient="linear(348deg, #2561A1 10%, #1CAB4E 110%)">
-            <Container
-                maxW={"7xl"}
-                py={12}
-            >
+            <Container maxW={"7xl"} py={12}>
                 <Stack spacing={{ base: 5, md: 10 }} textAlign={"center"}>
                     <Heading
                         fontSize={{ base: "2xl", sm: "3xl", lg: "4xl" }}
@@ -186,19 +171,20 @@ export default function News() {
                         <Slider {...slickSettings}>
                             {FEATURE_ITEMS.map((news, index) => (
                                 <Slide
-                                    key={index} label={news.label} content={news.content} image={news.image} subContent={news.subContent} />
+                                    key={index}
+                                    label={news.label}
+                                    content={news.content}
+                                    image={news.image}
+                                    subContent={news.subContent}
+                                />
                             ))}
-
-
                         </Slider>
                     </Box>
-
                 </Stack>
             </Container>
-        </Box >
+        </Box>
     );
 }
-
 
 const DeviceIcon = (props: IconProps) => {
     return (

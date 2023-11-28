@@ -4,6 +4,7 @@ import { theme } from "../../chakra/theme";
 import Navbar from "@/components/Navbar2nd";
 import Footer from "@/components/Footer";
 import Download from "@/components/Download";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export default function PrivacyLayout({
     children,
@@ -17,27 +18,10 @@ export default function PrivacyLayout({
                 {children}
                 <Download />
                 <Footer />
+                <ScrollToTopButton />
             </ChakraProvider>
-
         </>
-
     );
 }
 
 
-// export default function RootLayout({
-//     children,
-// }: {
-//     children: React.ReactNode;
-// }) {
-//     return (
-//         <html lang="en">
-//             <head />
-//             <body>
-//                 <ChakraProvider theme={theme}>
-//                     {children}
-//                 </ChakraProvider>
-//             </body>
-//         </html>
-//     );
-// }

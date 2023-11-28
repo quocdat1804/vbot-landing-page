@@ -22,6 +22,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(policy)/contact-sales/page.js"
+    ],
+    "/(policy)/privacy/overview/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(policy)/privacy/overview/page.js"
     ]
   }
 }
