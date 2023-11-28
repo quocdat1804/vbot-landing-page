@@ -9,6 +9,8 @@ import {
   Text,
   VisuallyHidden,
   useColorModeValue,
+  Link,
+  Image
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { FaFacebook, FaFacebookMessenger } from "react-icons/fa";
@@ -94,7 +96,7 @@ export default function Footer() {
             <ListHeader>Chính sách</ListHeader>
             <Box
               as="a"
-              href={`${config.basePath}/privacy/overview`}
+              href={`${config.basePath}/privacy/trust`}
               _hover={{
                 color: "#168F41",
               }}
@@ -164,6 +166,15 @@ export default function Footer() {
                 <FaFacebookMessenger />
               </SocialButton>
             </Stack>
+            <Link as={"a"} target="_blank" rel="noopener noreferrer" href={"http://online.gov.vn/Home/WebDetails/74988#"} pt={2}>
+              <Image
+                width={"200px"}
+                alt={"Đã thông báo Bộ Công Thương"}
+                fit={"scale-down"}
+                align={"start"}
+                src={`${config.basePath}/logo-bct.png`}
+              />
+            </Link>
           </Stack>
         </SimpleGrid>
       </Container>

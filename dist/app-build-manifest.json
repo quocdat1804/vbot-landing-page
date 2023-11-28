@@ -1,16 +1,92 @@
 {
   "pages": {
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/layout.js"
+    ],
     "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/page.css",
       "static/chunks/app/page.js"
     ],
-    "/layout": [
+    "/(policy)/contact-sales/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
+      "static/css/app/(policy)/contact-sales/page.css",
+      "static/chunks/app/(policy)/contact-sales/page.js"
+    ],
+    "/(policy)/privacy/privacypolicy/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(policy)/privacy/privacypolicy/page.css",
+      "static/chunks/app/(policy)/privacy/privacypolicy/page.js"
+    ],
+    "/(policy)/privacy/privacypolicy/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(policy)/privacy/privacypolicy/layout.js"
+    ],
+    "/(policy)/privacy/paymentpolicy/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(policy)/privacy/paymentpolicy/page.css",
+      "static/chunks/app/(policy)/privacy/paymentpolicy/page.js"
+    ],
+    "/(policy)/privacy/paymentpolicy/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(policy)/privacy/paymentpolicy/layout.js"
+    ],
+    "/(policy)/privacy/warrantypolicy/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(policy)/privacy/warrantypolicy/layout.js"
+    ],
+    "/(policy)/privacy/warrantypolicy/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(policy)/privacy/warrantypolicy/page.css",
+      "static/chunks/app/(policy)/privacy/warrantypolicy/page.js"
+    ],
+    "/(policy)/contact-sales/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(policy)/contact-sales/layout.js"
+    ],
+    "/(policy)/privacy/trust/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(policy)/privacy/trust/page.css",
+      "static/chunks/app/(policy)/privacy/trust/page.js"
+    ],
+    "/(policy)/privacy/trust/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(policy)/privacy/trust/layout.js"
+    ],
+    "/(policy)/privacy/exchangepolicy/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(policy)/privacy/exchangepolicy/page.css",
+      "static/chunks/app/(policy)/privacy/exchangepolicy/page.js"
+    ],
+    "/(policy)/privacy/exchangepolicy/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(policy)/privacy/exchangepolicy/layout.js"
+    ],
+    "/(policy)/privacy/transportpolicy/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(policy)/privacy/transportpolicy/page.css",
+      "static/chunks/app/(policy)/privacy/transportpolicy/page.js"
+    ],
+    "/(policy)/privacy/transportpolicy/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(policy)/privacy/transportpolicy/layout.js"
     ]
   }
 }

@@ -1,7 +1,15 @@
-"use client";
+// "use client";
 import { ChakraProvider, extendTheme, Box } from "@chakra-ui/react";
 import { theme } from "../chakra/theme";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import Facebook from "@/components/Facebook";
+import Bownow from "@/components/Bownow";
+import Tiktok from "@/components/Tiktok";
+
+export const metadata = {
+  title: "VBot",
+  description: "Tổng đài di động đa tính năng"
+}
 
 export default function RootLayout({
   children,
@@ -10,12 +18,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head />
+      <head>
+        <Bownow />
+        <Tiktok />
+      </head>
       <body>
-        <ChakraProvider theme={theme}>
-          {children}
-          <ScrollToTopButton />
-        </ChakraProvider>
+
+        {children}
+
+        <Facebook />
+
       </body>
     </html>
   );

@@ -1,10 +1,19 @@
 "use client";
 
 import { Box, Container, Heading, Center, Text, Stack } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
+import { theme } from "../../../../chakra/theme";
+import Navbar from "@/components/Navbar2nd";
+import Footer from "@/components/Footer";
+import Download from "@/components/Download";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
-export default function ExchangePolicy() {
+
+export default function WarrantyPolicy() {
     return (
-        <>
+
+        <ChakraProvider theme={theme}>
+            <Navbar />
             <Box id="header" bgColor={"#E3F7EA"}>
                 <Box>
                     <Container as={Stack} maxW={"7xl"} py={{ base: 12, md: 20 }}>
@@ -55,6 +64,10 @@ export default function ExchangePolicy() {
                     </Container>
                 </Box>
             </Box>
-        </>
+            <Download />
+            <Footer />
+            <ScrollToTopButton />
+        </ChakraProvider>
+
     );
 }
