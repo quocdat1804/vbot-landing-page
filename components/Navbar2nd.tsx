@@ -64,7 +64,7 @@ export default function Navbar2nd() {
                         alignItems="center"
                         justify={{ base: "center", md: "start" }}
                     >
-                        <Stack as={"a"} href="/" direction="row" alignItems="center">
+                        <Stack as={"a"} href={`${config.basePath}/`} direction="row" alignItems="center">
                             <Image
                                 boxSize="36px"
                                 objectFit="cover"
