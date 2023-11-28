@@ -1,6 +1,5 @@
 "use client";
 
-import { InfoIcon } from "@chakra-ui/icons";
 import {
   Box,
   Container,
@@ -9,11 +8,9 @@ import {
   Image,
   Text,
   Stack,
-  HStack,
-  VStack,
-  Button,
   Flex,
   Spacer,
+  Link
 } from "@chakra-ui/react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -65,13 +62,16 @@ export default function Download() {
                 />
                 <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4}>
                   {DOWNLOAD_ITEMS.map((item) => (
-                    <Image
-                      key={item.label}
-                      alt={item.label}
-                      fit={"scale-down"}
-                      align={"start"}
-                      src={item.image}
-                    />
+                    <Link href={item.link} key={item.label}>
+                      <Image
+                        key={item.label}
+                        alt={item.label}
+                        fit={"scale-down"}
+                        align={"start"}
+                        src={item.image}
+                      />
+                    </Link>
+
                   ))}
                 </SimpleGrid>
               </Stack>
@@ -95,19 +95,23 @@ export default function Download() {
 interface DownloadItem {
   label: string;
   image: string;
+  link: string;
 }
 
 const DOWNLOAD_ITEMS: Array<DownloadItem> = [
   {
     label: "AppStore",
     image: `${config.basePath}/appstore.png`,
+    link: "https://apps.apple.com/us/app/vbot/id1538262788",
   },
   {
     label: "CHPlay",
     image: `${config.basePath}/google.png`,
+    link: "https://play.google.com/store/apps/details?id=com.vpmedia.vbot",
   },
   {
     label: "Windows",
     image: `${config.basePath}/windows.png`,
+    link: "Microsoft",
   },
 ];

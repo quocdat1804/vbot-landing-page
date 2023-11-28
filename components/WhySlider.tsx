@@ -1,7 +1,6 @@
 import {
     Box,
     VStack,
-    HStack,
     Text,
     Icon,
     IconProps,
@@ -9,10 +8,6 @@ import {
     Heading,
     ListItem,
     UnorderedList,
-    Spacer,
-    Container,
-    Wrap,
-    WrapItem,
     SimpleGrid,
 } from "@chakra-ui/react";
 import "slick-carousel/slick/slick.css";

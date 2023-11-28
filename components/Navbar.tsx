@@ -10,19 +10,14 @@ import {
   Button,
   Stack,
   Collapse,
-  Icon,
   Popover,
   PopoverTrigger,
-  PopoverContent,
-  useColorModeValue,
   useDisclosure,
-  background,
+  Link as ChakraLink
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
   CloseIcon,
-  ChevronDownIcon,
-  ChevronRightIcon,
 } from "@chakra-ui/icons";
 import config from '../next.config';
 
@@ -69,7 +64,7 @@ export default function Navbar() {
             alignItems="center"
             justify={{ base: "center", md: "start" }}
           >
-            <Stack direction="row" alignItems="center">
+            <Stack as={"a"} href="/" direction="row" alignItems="center">
               <Image
                 boxSize="36px"
                 objectFit="cover"
@@ -97,8 +92,10 @@ export default function Navbar() {
             direction={"row"}
             spacing={6}
           >
-            <Button
 
+            <Button
+              as={"a"}
+              href={"https://vbot.vn/v2/login"}
               fontSize={"sm"}
               fontWeight={600}
               variant="outline"
@@ -112,8 +109,11 @@ export default function Navbar() {
             >
               Đăng nhập
             </Button>
-            <Button
 
+
+            <Button
+              as={"a"}
+              href={`${config.basePath}/contact-sales`}
               display={{ base: "none", md: "inline-flex" }}
               fontSize={"sm"}
               fontWeight={600}

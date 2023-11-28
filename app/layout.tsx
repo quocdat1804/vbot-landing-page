@@ -16,18 +16,7 @@ export default function RootLayout({
       <head />
       <body>
         <ChakraProvider theme={theme}>
-          <Box
-            w='100%'
-            bgGradient="radial(100% 140% at 70% 40%, #127B36 0%, #0A5725 17.71%, #033615 50%)"
-          >
-            <Navbar />
-            <HeroSection />
-            <Agency />
-          </Box>
-
-
           {children}
-          <Footer />
         </ChakraProvider>
       </body>
     </html>

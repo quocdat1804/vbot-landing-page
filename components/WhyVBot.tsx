@@ -47,7 +47,7 @@ export default function WhyVBot() {
               >
                 Tại sao bạn nên sử dụng tổng đài số VBot?
               </Heading>
-              <Flex>
+              {/* <Flex>
                 <Button
                   display={{ base: "none", md: "inline-flex" }}
                   as={"a"}
@@ -65,7 +65,7 @@ export default function WhyVBot() {
                   Tìm hiểu thêm
                 </Button>
                 <Spacer />
-              </Flex>
+              </Flex> */}
             </Stack>
             <Container maxW={{ base: "xl", sm: "2xl", md: "4xl" }}>
               <WhySlider />
