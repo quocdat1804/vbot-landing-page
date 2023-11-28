@@ -97,10 +97,6 @@ export default function Features() {
                                                     {subTab.content}
                                                     <Image
                                                         alt={subTab.content}
-                                                        fit={"scale-down"}
-                                                        align={"start"}
-                                                        w={"100%"}
-                                                        h={"100%"}
                                                         src={subTab.image}
                                                     />
                                                 </AccordionPanel>

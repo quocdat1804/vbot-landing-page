@@ -66,7 +66,7 @@ export default function Download() {
                 />
                 <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4}>
                   {DOWNLOAD_ITEMS.map((item) => (
-                    <Link href={item.link} key={item.label}>
+                    <Link as={"a"} target="_blank" rel="noopener noreferrer" href={item.link} key={item.label}>
                       <Image
                         key={item.label}
                         alt={item.label}
@@ -114,6 +114,6 @@ const DOWNLOAD_ITEMS: Array<DownloadItem> = [
   {
     label: "Windows",
     image: `${config.basePath}/windows.png`,
-    link: "Microsoft",
+    link: "https://apps.microsoft.com/detail/9NJLFWKLGJ7R?hl=vi&gl=VI",
   },
 ];
