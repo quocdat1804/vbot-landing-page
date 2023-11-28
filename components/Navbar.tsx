@@ -13,15 +13,17 @@ import {
   Popover,
   PopoverTrigger,
   useDisclosure,
-  Link as ChakraLink
 } from "@chakra-ui/react";
-import {
-  HamburgerIcon,
-  CloseIcon,
-} from "@chakra-ui/icons";
-import config from '../next.config';
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import config from "../next.config";
 
-import { Link, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+} from "react-scroll";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -55,7 +57,7 @@ export default function Navbar() {
               aria-label={"Toggle Navigation"}
               _hover={{
                 bg: "gray.200",
-                color: "black"
+                color: "black",
               }}
             />
           </Flex>
@@ -64,7 +66,12 @@ export default function Navbar() {
             alignItems="center"
             justify={{ base: "center", md: "start" }}
           >
-            <Stack as={"a"} href={`${config.basePath}/`} direction="row" alignItems="center">
+            <Stack
+              as={"a"}
+              href={`${config.basePath}/`}
+              direction="row"
+              alignItems="center"
+            >
               <Image
                 boxSize="36px"
                 objectFit="cover"
@@ -92,7 +99,6 @@ export default function Navbar() {
             direction={"row"}
             spacing={6}
           >
-
             <Button
               as={"a"}
               href={"https://vbot.vn/v2/login"}
@@ -100,16 +106,14 @@ export default function Navbar() {
               fontWeight={600}
               variant="outline"
               borderWidth={2}
-
               color={"white"}
               _hover={{
                 bg: "brand.500",
-                color: "white"
+                color: "white",
               }}
             >
               Đăng nhập
             </Button>
-
 
             <Button
               as={"a"}
@@ -119,10 +123,9 @@ export default function Navbar() {
               fontWeight={600}
               color={"black"}
               bg="white"
-
               _hover={{
                 bg: "brand.500",
-                color: "white"
+                color: "white",
               }}
             >
               DÙNG THỬ MIỄN PHÍ
@@ -139,7 +142,6 @@ export default function Navbar() {
 }
 
 const DesktopNav = () => {
-
   return (
     <Stack direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
@@ -155,16 +157,19 @@ const DesktopNav = () => {
                 _hover={{
                   textDecoration: "underline",
                   color: "white",
-                  background: "transparent"
+                  background: "transparent",
                 }}
               >
-                <Link activeClass="active" to={navItem.id} smooth={true} duration={500}>
+                <Link
+                  activeClass="active"
+                  to={navItem.id}
+                  smooth={true}
+                  duration={500}
+                >
                   {navItem.label}
                 </Link>
-
               </Box>
             </PopoverTrigger>
-
           </Popover>
         </Box>
       ))}
@@ -188,23 +193,25 @@ const MobileNav = () => {
                 _hover={{
                   textDecoration: "underline",
                   color: "white",
-                  background: "transparent"
+                  background: "transparent",
                 }}
               >
-                <Link activeClass="active" to={navItem.id} smooth={true} duration={500}>
+                <Link
+                  activeClass="active"
+                  to={navItem.id}
+                  smooth={true}
+                  duration={500}
+                >
                   {navItem.label}
                 </Link>
-
               </Box>
             </PopoverTrigger>
-
           </Popover>
         </Box>
       ))}
     </Stack>
   );
 };
-
 
 interface NavItem {
   id: string;
@@ -242,5 +249,4 @@ const NAV_ITEMS: Array<NavItem> = [
   //   label: "Hướng dẫn",
   //   href: "#",
   // },
-
 ];

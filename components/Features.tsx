@@ -20,7 +20,7 @@ import {
 } from "@chakra-ui/react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import config from '../next.config';
+import config from "../next.config";
 
 export default function Features() {
     const ref = useRef<HTMLDivElement>(null);
@@ -32,80 +32,88 @@ export default function Features() {
     const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
     return (
-        <Box as={motion.div} ref={ref}
-            style={{
-                scale: scaleProgress,
-                opacity: opacityProgress,
-            }}>
-            <Container id="feature" maxW={"7xl"} py={{ base: 10, md: 12 }} textAlign={"center"}>
-                <Heading fontSize={{ base: "2xl", sm: "3xl", lg: "4xl" }} mb={12}>
-                    Các tính năng của VBot
-                </Heading>
-                <Tabs align="center" colorScheme="green" variant="unstyled" display={{ base: "none", md: "contents" }} py={12}>
-                    <TabList>
+        <Container id="feature" maxW={"7xl"} py={0} textAlign={"center"}>
+            <Box
+                as={motion.div}
+                ref={ref}
+                style={{
+                    scale: scaleProgress,
+                    opacity: opacityProgress,
+                }}
+            >
+                <Container maxW={"7xl"} pt={{ base: 10, md: 12 }} textAlign={"center"}>
+                    <Heading fontSize={{ base: "2xl", sm: "3xl", lg: "4xl" }} mb={8}>
+                        Các tính năng của VBot
+                    </Heading>
+                    <Tabs
+                        align="center"
+                        colorScheme="green"
+                        variant="unstyled"
+                        display={{ base: "none", md: "contents" }}
+                    >
+                        <TabList>
+                            {FEATURE_ITEMS.map((tab, index) => (
+                                <Tab
+                                    key={index}
+                                    _selected={{ color: "brand.400", bg: "brand.100" }}
+                                    fontWeight={"semibold"}
+                                >
+                                    {tab.tabName}
+                                </Tab>
+                            ))}
+                        </TabList>
+                        <TabPanels>
+                            {FEATURE_ITEMS.map((tab, index) => (
+                                <TabPanel key={index}>
+                                    <SubTab data={tab.subTabs} />
+                                </TabPanel>
+                            ))}
+                        </TabPanels>
+                    </Tabs>
+                    <Accordion allowToggle display={{ base: "contents", md: "none" }}>
                         {FEATURE_ITEMS.map((tab, index) => (
-                            <Tab
-                                key={index}
-                                _selected={{ color: "brand.400", bg: "brand.100" }}
-                                fontWeight={"semibold"}
-                            >
-                                {tab.tabName}
-                            </Tab>
+                            <AccordionItem key={index}>
+                                <h2>
+                                    <AccordionButton>
+                                        <Box as="span" flex="1" textAlign="left">
+                                            {tab.tabName}
+                                        </Box>
+                                        <AccordionIcon />
+                                    </AccordionButton>
+                                </h2>
+                                <AccordionPanel pb={4}>
+                                    <Accordion allowToggle>
+                                        {tab.subTabs.map((subTab, index) => (
+                                            <AccordionItem key={subTab.name}>
+                                                <h2>
+                                                    <AccordionButton>
+                                                        <Box as="span" flex="1" textAlign="left">
+                                                            {subTab.name}
+                                                        </Box>
+                                                        <AccordionIcon />
+                                                    </AccordionButton>
+                                                </h2>
+                                                <AccordionPanel pb={4}>
+                                                    {subTab.content}
+                                                    <Image
+                                                        alt={subTab.content}
+                                                        fit={"scale-down"}
+                                                        align={"start"}
+                                                        w={"100%"}
+                                                        h={"100%"}
+                                                        src={subTab.image}
+                                                    />
+                                                </AccordionPanel>
+                                            </AccordionItem>
+                                        ))}
+                                    </Accordion>
+                                </AccordionPanel>
+                            </AccordionItem>
                         ))}
-                    </TabList>
-                    <TabPanels>
-                        {FEATURE_ITEMS.map((tab, index) => (
-                            <TabPanel key={index}>
-                                <SubTab data={tab.subTabs} />
-                            </TabPanel>
-                        ))}
-                    </TabPanels>
-                </Tabs>
-                <Accordion allowToggle display={{ base: "contents", md: "none" }}>
-                    {FEATURE_ITEMS.map((tab, index) => (
-                        <AccordionItem key={index}>
-                            <h2>
-                                <AccordionButton>
-                                    <Box as="span" flex='1' textAlign='left'>
-                                        {tab.tabName}
-                                    </Box>
-                                    <AccordionIcon />
-                                </AccordionButton>
-                            </h2>
-                            <AccordionPanel pb={4}>
-                                <Accordion allowToggle >
-                                    {tab.subTabs.map((subTab, index) => (
-                                        <AccordionItem key={subTab.name}>
-                                            <h2>
-                                                <AccordionButton>
-                                                    <Box as="span" flex='1' textAlign='left'>
-                                                        {subTab.name}
-                                                    </Box>
-                                                    <AccordionIcon />
-                                                </AccordionButton>
-                                            </h2>
-                                            <AccordionPanel pb={4}>
-                                                {subTab.content}
-                                                <Image
-                                                    alt={subTab.content}
-                                                    fit={"scale-down"}
-                                                    align={"start"}
-                                                    w={"100%"}
-                                                    h={"100%"}
-                                                    src={subTab.image}
-                                                />
-                                            </AccordionPanel>
-                                        </AccordionItem>
-
-                                    ))}
-                                </Accordion>
-                            </AccordionPanel>
-                        </AccordionItem>
-
-                    ))}
-                </Accordion>
-            </Container>
-        </Box>
+                    </Accordion>
+                </Container>
+            </Box>
+        </Container>
     );
 }
 
@@ -119,8 +127,7 @@ const SubTab = (props: Props) => {
             py={12}
             defaultIndex={0}
         >
-            <TabList
-                alignItems={"start"} w={"400px"}>
+            <TabList alignItems={"start"} w={"400px"}>
                 {props.data.map((tab, index) => (
                     <Tab
                         key={index}
@@ -129,15 +136,12 @@ const SubTab = (props: Props) => {
                         textAlign={"start"}
                     >
                         <VStack alignItems={"start"}>
-                            <Text>
-                                {tab.name}
-                            </Text>
+                            <Text>{tab.name}</Text>
 
                             <Text fontWeight={"normal"} fontSize={14}>
                                 {tab.content}
                             </Text>
                         </VStack>
-
                     </Tab>
                 ))}
             </TabList>
@@ -151,7 +155,8 @@ const SubTab = (props: Props) => {
                             w={"100%"}
                             h={"100%"}
                             src={tab.image}
-                        /></TabPanel>
+                        />
+                    </TabPanel>
                 ))}
             </TabPanels>
         </Tabs>

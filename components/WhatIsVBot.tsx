@@ -1,33 +1,26 @@
 "use client";
 
-import {
-    Container,
-    Stack,
-    Flex,
-    Heading,
-    Text,
-    Button,
-    Image,
-    Spacer,
-} from "@chakra-ui/react";
-import { InfoIcon } from "@chakra-ui/icons";
+import { Container, Stack, Flex, Heading, Text, Image } from "@chakra-ui/react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react"
-import config from '../next.config';
+import { useRef } from "react";
+import config from "../next.config";
 
 export default function WhatIsVBot() {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
         offset: ["0 1", "1 1.33"],
-    })
-    const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1])
-    const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1])
+    });
+    const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+    const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
     return (
-        <motion.div ref={ref} style={{
-            scale: scaleProgress,
-            opacity: opacityProgress
-        }}>
+        <motion.div
+            ref={ref}
+            style={{
+                scale: scaleProgress,
+                opacity: opacityProgress,
+            }}
+        >
             <Container maxW={"7xl"}>
                 <Stack
                     align={"center"}
@@ -64,28 +57,9 @@ export default function WhatIsVBot() {
                             người dùng dễ dàng sử dụng thông qua các thiết bị smartphone hoặc
                             laptop kết nối internet.
                         </Text>
-                        {/* <Flex>
-                            <Button
-                                as={"a"}
-                                fontSize={"md"}
-                                fontWeight={600}
-                                href={"#"}
-                                bg={"brand.500"}
-                                color={"white"}
-                                leftIcon={<InfoIcon />}
-                                _hover={{
-                                    bg: "gray.200",
-                                    color: "black",
-                                }}
-                            >
-                                Tìm hiểu thêm
-                            </Button>
-                            <Spacer />
-                        </Flex> */}
                     </Stack>
                 </Stack>
             </Container>
         </motion.div>
-
     );
 }

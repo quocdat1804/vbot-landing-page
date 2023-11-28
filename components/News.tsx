@@ -15,34 +15,29 @@ import "slick-carousel/slick/slick-theme.css";
 import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import config from '../next.config';
+import config from "../next.config";
 
 const Slider2 = dynamic(() => import("react-slick").then((m) => m.default), {
     ssr: false,
 });
 
-
-
 const NewsCard = ({ label, content }: NewsItem) => {
-
     return (
         <Box
-            maxW={{ base: 'full', md: '400px' }}
+            maxW={{ base: "full", md: "400px" }}
             bg={"white"}
             overflow="hidden"
-            borderRadius='lg'
+            borderRadius="lg"
             p={5}
             transition={"all 0.5s"}
             textAlign={"start"}
         >
-            <Stack align={'start'} spacing={2}>
-
+            <Stack align={"start"} spacing={2}>
                 <Box mt={1}>
                     <Heading size="sm">{label}</Heading>
-                    <Text mt={1} fontSize={'14px'}>
+                    <Text mt={1} fontSize={"14px"}>
                         {content}
                     </Text>
-
                 </Box>
                 <Stack direction={"row"} alignItems={"center"} spacing={4}>
                     <Image
@@ -55,19 +50,12 @@ const NewsCard = ({ label, content }: NewsItem) => {
                 </Stack>
             </Stack>
         </Box>
-    )
-}
+    );
+};
 
 const NewsSlide = ({ label, content }: NewsItem) => {
     return (
-        <VStack
-            w="１００％"
-            h="１００％"
-            mx="4"
-            borderRadius={"md"}
-            px={4}
-            py={4}
-        >
+        <VStack w="１００％" h="１００％" mx="4" borderRadius={"md"} px={4} py={4}>
             <NewsCard label={label} content={content} />
         </VStack>
     );
@@ -95,41 +83,38 @@ export default function News() {
                     slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: true,
-                    dots: true
-                }
+                    dots: true,
+                },
             },
             {
                 breakpoint: 1080,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 2
-                }
+                    slidesToScroll: 2,
+                },
             },
             {
                 breakpoint: 720,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
+                    slidesToScroll: 1,
+                },
+            },
+        ],
     };
     return (
         <Box bg={useColorModeValue("gray.50", "gray.900")}>
-            <Box as={motion.div} ref={ref}
+            <Box
+                as={motion.div}
+                ref={ref}
                 style={{
                     scale: scaleProgress,
                     opacity: opacityProgress,
-                }}>
-                <Container
-                    maxW={"7xl"}
-                    py={12}
-                >
+                }}
+            >
+                <Container maxW={"7xl"} py={12}>
                     <Stack spacing={{ base: 5, md: 10 }} textAlign={"center"}>
-                        <Heading
-                            fontSize={{ base: "2xl", sm: "3xl", lg: "4xl" }}
-
-                        >
+                        <Heading fontSize={{ base: "2xl", sm: "3xl", lg: "4xl" }}>
                             Thông tin hữu ích
                         </Heading>
 
@@ -186,21 +171,19 @@ export default function News() {
                             <Slider2 {...slickSettings}>
                                 {NEWS_ITEMS.map((news, index) => (
                                     <NewsSlide
-                                        key={index} label={news.label} content={news.content}
+                                        key={index}
+                                        label={news.label}
+                                        content={news.content}
                                     />
                                 ))}
-
-
                             </Slider2>
                         </Box>
-
                     </Stack>
                 </Container>
             </Box>
-        </Box >
+        </Box>
     );
 }
-
 
 interface NewsItem {
     label: string;
@@ -210,14 +193,17 @@ interface NewsItem {
 const NEWS_ITEMS: Array<NewsItem> = [
     {
         label: "Dịch vụ Voice Brandname",
-        content: "Voice brandname là dịch vụ cuộc gọi hiển thị thương hiệu của doanh nghiệp mỗi khi doanh nghiệp thực hiện cuộc gọi đến khách hàng. Thay vì hiển thị số điện thoại, tên thương hiệu của doanh nghiệp sẽ được hiển thị trên màn hình điện thoại của khách hàng. Hiện tại, VBot đã hỗ trợ đầu số brandname của cả 3 nhà mạng Viettel, Mobifone, Vinaphone.",
+        content:
+            "Voice brandname là dịch vụ cuộc gọi hiển thị thương hiệu của doanh nghiệp mỗi khi doanh nghiệp thực hiện cuộc gọi đến khách hàng. Thay vì hiển thị số điện thoại, tên thương hiệu của doanh nghiệp sẽ được hiển thị trên màn hình điện thoại của khách hàng. Hiện tại, VBot đã hỗ trợ đầu số brandname của cả 3 nhà mạng Viettel, Mobifone, Vinaphone.",
     },
     {
         label: "Số hotline Quảng cáo/Chăm sóc khách hàng",
-        content: "Số hotline là số quảng cáo sẽ cho phép thực hiện các cuộc gọi quảng cáo đến thuê bao khách hàng trong thời gian từ 8h đến 17h các ngày trong tuần. Số hotline là số chăm sóc khách hàng có thể sử dụng để gọi cho khách hàng toàn thời gian nhưng không được phép thực hiện các cuộc gọi quảng cáo. Cả hai dạng số hotline đều không được phép spam cuộc gọi đến khách hàng.",
+        content:
+            "Số hotline là số quảng cáo sẽ cho phép thực hiện các cuộc gọi quảng cáo đến thuê bao khách hàng trong thời gian từ 8h đến 17h các ngày trong tuần. Số hotline là số chăm sóc khách hàng có thể sử dụng để gọi cho khách hàng toàn thời gian nhưng không được phép thực hiện các cuộc gọi quảng cáo. Cả hai dạng số hotline đều không được phép spam cuộc gọi đến khách hàng.",
     },
     {
         label: "Một số mẹo sử dụng VBot hiệu quả",
-        content: "Số mobile sip trung sử dụng giao thức internet để thực hiện cuộc gọi nên hãy đảm bảo rằng kết nối internet của bạn luôn ổn định để có chất lượng đàm thoại tốt nhất.",
+        content:
+            "Số mobile sip trung sử dụng giao thức internet để thực hiện cuộc gọi nên hãy đảm bảo rằng kết nối internet của bạn luôn ổn định để có chất lượng đàm thoại tốt nhất.",
     },
 ];

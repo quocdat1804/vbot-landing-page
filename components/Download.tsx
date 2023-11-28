@@ -10,11 +10,11 @@ import {
   Stack,
   Flex,
   Spacer,
-  Link
+  Link,
 } from "@chakra-ui/react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import config from '../next.config';
+import config from "../next.config";
 
 export default function Download() {
   const ref = useRef<HTMLDivElement>(null);
@@ -26,11 +26,14 @@ export default function Download() {
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
   return (
     <Box id="download" bgGradient="linear(92deg, #2561A1 0%, #1CAB4E 100%)">
-      <Box as={motion.div} ref={ref}
+      <Box
+        as={motion.div}
+        ref={ref}
         style={{
           scale: scaleProgress,
           opacity: opacityProgress,
-        }}>
+        }}
+      >
         <Container as={Stack} maxW={"7xl"} py={{ base: 12, md: 20 }}>
           <Stack
             align={"center"}
@@ -39,7 +42,8 @@ export default function Download() {
             spacing={20}
           >
             <Flex>
-              <Stack spacing={{ base: 2, md: 4 }}
+              <Stack
+                spacing={{ base: 2, md: 4 }}
                 align={{ base: "center", md: "start" }}
                 textAlign={{ base: "center", md: "start" }}
               >
@@ -71,7 +75,6 @@ export default function Download() {
                         src={item.image}
                       />
                     </Link>
-
                   ))}
                 </SimpleGrid>
               </Stack>
@@ -88,7 +91,6 @@ export default function Download() {
         </Container>
       </Box>
     </Box>
-
   );
 }
 

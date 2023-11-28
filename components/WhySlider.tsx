@@ -122,27 +122,27 @@ export default function FeatureSlider() {
                     slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: true,
-                    dots: true
-                }
+                    dots: true,
+                },
             },
             {
                 breakpoint: 600,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 2
-                }
+                    slidesToScroll: 2,
+                },
             },
             {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
+                    slidesToScroll: 1,
+                },
+            },
             // You can unslick at a given breakpoint now by adding:
             // settings: "unslick"
             // instead of a settings object
-        ]
+        ],
     };
     return (
         // <Box>
@@ -198,21 +198,23 @@ export default function FeatureSlider() {
                     },
                 }}
             >
-                {isLargerThan600 ? <Slider {...slickSettings}>
-                    <Slide
-                        key="0"
-                        items={[
-                            FEATURE_ITEMS[0],
-                            FEATURE_ITEMS[1],
-                            FEATURE_ITEMS[2],
-                            FEATURE_ITEMS[3],
-                        ]}
-                    />
-                    <Slide
-                        key="0"
-                        items={[FEATURE_ITEMS[4], FEATURE_ITEMS[5], FEATURE_ITEMS[6],]}
-                    />
-                </Slider> :
+                {isLargerThan600 ? (
+                    <Slider {...slickSettings}>
+                        <Slide
+                            key="0"
+                            items={[
+                                FEATURE_ITEMS[0],
+                                FEATURE_ITEMS[1],
+                                FEATURE_ITEMS[2],
+                                FEATURE_ITEMS[3],
+                            ]}
+                        />
+                        <Slide
+                            key="0"
+                            items={[FEATURE_ITEMS[4], FEATURE_ITEMS[5], FEATURE_ITEMS[6]]}
+                        />
+                    </Slider>
+                ) : (
                     <Slider {...slickSettings2}>
                         {FEATURE_ITEMS.map((item, index) => (
                             <Slide2
@@ -220,11 +222,11 @@ export default function FeatureSlider() {
                                 heading={item.label}
                                 icon={item.image}
                                 content={item.content}
-                                subContent={item.subContent} />
+                                subContent={item.subContent}
+                            />
                         ))}
-
-                    </Slider>}
-
+                    </Slider>
+                )}
             </Box>
         </Box>
         //     </Container>
